@@ -19,3 +19,4 @@ function getUserInfo(userId) {
     });
 }
 getUserInfo(90);
+//# sourceMappingURL=usersExerciseGPT.js.map
