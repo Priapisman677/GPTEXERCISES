@@ -4,6 +4,7 @@
 // Validates enchantments:
 // If the metadata object includes "enchantments", ensure:
 // ---All enchantment levels are numbers greater than 0.
+//! I didn't do this below:
 // Validates item names:
 // ---Ensure all item names (keys in the inventory object) contain only:
 // ---Lowercase letters (a-z), numbers (0-9), and underscores (_).
@@ -14,7 +15,7 @@ export const inventory = {
     diamond: {
         count: 3,
         metadata: {
-            rarity: "rare",
+            rarity: "rare", //This metadata doesn't have type
             enchantments: {
                 unbreaking: 3,
                 mending: 1,
@@ -24,14 +25,14 @@ export const inventory = {
     gold_ingot: {
         count: 10,
         metadata: {
-            rarity: "common",
+            rarity: "common", // Duplicate rarity
             type: "material",
         },
     },
     oak_plank: {
         count: 0, // Invalid count
         metadata: {
-            rarity: "common",
+            rarity: "common", //Duplicate rarity
             type: "building",
         },
     },
@@ -49,7 +50,7 @@ export const inventory = {
     stone: {
         count: 5,
         metadata: {
-            rarity: "common", // Duplicate rarity
+            rarity: "ultra",
             type: "building",
         },
     },

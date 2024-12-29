@@ -8,10 +8,12 @@ import { InventoryInterface } from "./interfaces.js";
 // If the metadata object includes "enchantments", ensure:
 // ---All enchantment levels are numbers greater than 0.
 
+//! I didn't do this below:
 // Validates item names:
 // ---Ensure all item names (keys in the inventory object) contain only:
 // ---Lowercase letters (a-z), numbers (0-9), and underscores (_).
 // ---Invalid names (e.g., "diamond_sword!") should cause the validation to fail.
+
 
 // Ensures unique rarity:
 // ---There must not be duplicate "rarity" values across items.
@@ -20,7 +22,7 @@ export const inventory: InventoryInterface = {
 	diamond: {
 		count: 3,
 		metadata: {
-			rarity: "rare",
+			rarity: "rare", //This metadata doesn't have type
 			enchantments: {
 				unbreaking: 3,
 				mending: 1,
@@ -30,15 +32,14 @@ export const inventory: InventoryInterface = {
 	gold_ingot: {
 		count: 10,
 		metadata: {
-			rarity: "common",
+			rarity: "common", // Duplicate rarity
 			type: "material",
-            
 		},
 	},
 	oak_plank: {
-		count:0, // Invalid count
+		count: 0, // Invalid count
 		metadata: {
-			rarity: "common",
+			rarity: "common", //Duplicate rarity
 			type: "building",
 		},
 	},
@@ -56,7 +57,7 @@ export const inventory: InventoryInterface = {
 	stone: {
 		count: 5,
 		metadata: {
-			rarity: "common", // Duplicate rarity
+			rarity: "ultra",
 			type: "building",
 		},
 	},
